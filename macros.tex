@@ -1,0 +1,252 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%              Jacob Salomonsens Macros              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                       Layout                       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\HRule}		{\rule{\linewidth}{0.5mm}}
+
+\newcommand{\insfig}[4]{		% \insfig{path}{scale}{caption}{label}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=#2]{#1}
+		\caption{#3}
+		\label{#4}
+	\end{center}	
+\end{figure}
+}
+
+\newcommand{\instbl}[3]{		% \instbl{tabular}{caption}{label}
+\begin{table}[htb]
+	\begin{center}
+		#1
+		\caption{#2}
+		\label{#3}
+	\end{center}
+\end{table}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                        Math                        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\maple}[2]{			% Til formatering af maple input, 1=kommando 2=output
+\\\\\indent\texttt{[>#1}		% Brug \\ i output til at lave flere linier.
+\begin{center}
+\texttt{#2}
+\end{center}
+}
+
+\newcommand{\matr}[4]{			% \matr{[}{]}{colums}{contents (\\ = change row)}
+\left#1\!\begin{array}{#3}
+#4
+\end{array}\!\right#2
+}
+
+\newcommand{\Rm}[1]		{\mathrm{#1}}
+\newcommand{\unit}[1]		{\ensuremath{\,\mathrm{#1}}}
+\newcommand{\NN}		{\ensuremath{\mathbb N}}
+\newcommand{\RR}		{\ensuremath{\mathbb R}}
+\newcommand{\CC}		{\ensuremath{\mathbb C}}
+\newcommand{\degree}		{\ensuremath{\,^{\circ}}}
+\newcommand{\tii}[1]		{\ensuremath{\cdot10^{#1}}}
+\newcommand{\vekt}[1]		{\ensuremath{\overrightarrow{#1}}}
+\newcommand{\result}[1]		{\underline{\underline{#1}}}
+\newcommand{\rd}		{\mathrm{d}}
+\newcommand{\E}			{\mathrm{e}}
+\newcommand{\I}			{\mathrm{i}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                      Physics                       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\std}[1]		{#1^{\minuso}}
+\newcommand{\stdm}[1]		{#1^{\minuso}_\Rm{m}}
+\newcommand{\dstd}[2]		{\Delta_\mathrm{#1} #2^{\minuso}}
+
+\newcommand{\dQ}		{\rd Q}
+\newcommand{\dS}		{\rd S}
+\newcommand{\dT}		{\rd T}
+\newcommand{\dH}		{\rd H}
+\newcommand{\dU}		{\rd U}
+\newcommand{\dV}		{\rd V}
+\newcommand{\dP}		{\rd p}
+\newcommand{\dG}		{\rd G}
+\newcommand{\dTau}		{\rd \tau}
+\newcommand{\dN}		{\rd N}
+\newcommand{\dn}		{\rd n}
+
+\renewcommand{\DH}		{\Delta H}
+\newcommand{\DG}		{\Delta G}
+\newcommand{\DU}		{\Delta U}
+\newcommand{\DS}		{\Delta S}
+\newcommand{\DV}		{\Delta V}
+\newcommand{\DT}		{\Delta T}
+\newcommand{\DM}		{\Delta \mu}
+
+
+\newcommand{\pstd}		{p^{\minuso}}
+\newcommand{\sstd}		{S^{\minuso}}
+\newcommand{\smstd}		{S_\Rm{m}^{\minuso}}
+
+\newcommand{\cpstd}		{C_p^{\minuso}}
+\newcommand{\cpmstd}		{C_{p,\Rm{m}}^{\minuso}}
+\newcommand{\cpm}		{C_{p,\Rm{m}}}
+\newcommand{\cp}		{C_{p}}
+
+\newcommand{\cvstd}		{C_V^{\minuso}}
+\newcommand{\cvmstd}		{C_{V,\Rm{m}}^{\minuso}}
+\newcommand{\cvm}		{C_{V,\Rm{m}}}
+\newcommand{\cv}		{C_{V}}
+
+\newcommand{\Hm}		{H_\Rm{m}}
+\newcommand{\kb}		{k_\Rm{B}}
+\newcommand{\jpk}		{\unit{J}\unit{K^{-1}}}
+\newcommand{\jm}		{\unit{J}\unit{mol^{-1}}}
+\newcommand{\jkm}		{\unit{J}\unit{K^{-1}}\unit{mol^{-1}}}
+\newcommand{\kj}		{\unit{kJ}}
+\newcommand{\kjm}		{\unit{kJ}\unit{mol^{-1}}}
+\newcommand{\gpm}		{\unit{g}\unit{mol^{-1}}}
+
+\newcommand{\Tfus}		{T_\Rm{fus}}
+\newcommand{\Tvap}		{T_\Rm{vap}}
+\newcommand{\Tm}		{T_\Rm{m}}
+\newcommand{\Tb}		{T_\Rm{b}}
+\newcommand{\TRoom}		{298.15 \unit{K}}
+\newcommand{\TMelt}		{273.15 \unit{K}}
+\newcommand{\Kstd}		{\std{K}}
+
+\newcommand{\Q}[2]		{#1 \unit{#2}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                     Chemistry                      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \reak{\chem{HCl}&+&\chem{NaOH}&$\rightarrow$&\chem{NaCl}&+&\chem{H_2O}}
+\newcommand{\reak}[1]{
+\begin{center}
+	\begin{tabular}{ccccccccccccccccc}
+		#1
+	\end{tabular}
+\end{center}
+}
+
+\newcommand{\chem}[1]	{\ensuremath{\mathrm{#1}}}
+\newcommand{\lra}		{\longrightarrow}
+\newcommand{\arr}		{\rightleftarrows}
+\newcommand{\darr}		{\rightleftarrows}
+\newcommand{\KS}		{\textrm{K}_s}
+\newcommand{\KB}		{\textrm{K}_b}
+\newcommand{\KV}		{\textrm{K}_v}
+\newcommand{\mol}		{\textrm{mol}}
+\newcommand{\g}			{\textrm{g}}
+\newcommand{\gm}		{\frac{\g}{\mol}}
+\newcommand{\M}			{\textrm{M}}
+\newcommand{\konc}		{\frac{\mol}{\textrm{L}}}
+\newcommand{\pH}		{\textrm{pH}}
+\newcommand{\pOH}		{\textrm{pOH}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Chemical species
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ammnitrats}{\chem{NH_4NO_3(s)}}
+\newcommand{\benzen}    {\chem{C_6H_6}}
+\newcommand{\borto}     {\chem{B_2}}
+\newcommand{\bor}       {\chem{B}}
+\newcommand{\brmal}     {\chem{BrCH(COOH)_2}}
+\newcommand{\brma}      {\chem{BrMA}}
+\newcommand{\brmsf}     {\chem{{\sf [BrMA]}}}
+\newcommand{\bromat}    {\chem{BrO_3^-}}
+\newcommand{\bromid}    {\chem{Br^-}}
+\newcommand{\brom}      {\chem{Br^-}}
+\newcommand{\brsyr}     {\chem{HBrO_2}}
+\newcommand{\brto}      {\chem{Br_2}}
+\newcommand{\calc}      {\chem{Ca^{2+}}}
+\newcommand{\cefsf}     {\chem{{\sf [Ce^{4+}]}}}
+\newcommand{\cef}       {\chem{Ce^{4+}}}
+\newcommand{\cet}       {\chem{Ce^{3+}}}
+\newcommand{\chloridc}  {\chem{[Cl^-]}}
+\newcommand{\clto}      {\chem{Cl_2}}
+\newcommand{\cltog}     {\chem{Cl_2(g)}}
+\newcommand{\carbon}    {\chem{C}}
+\newcommand{\carbongr}  {\chem{C(grafit)}}
+\newcommand{\chlorid}   {\chem{Cl^-}}
+\newcommand{\coto}      {\chem{CO_2}}
+\newcommand{\cotos}     {\chem{CO_2(s)}}
+\newcommand{\cotol}     {\chem{CO_2(l)}}
+\newcommand{\cotog}     {\chem{CO_2(g)}}
+\newcommand{\co}        {\chem{CO}}
+\newcommand{\fe}        {\chem{Fe}}
+
+\newcommand{\hbro}      {\chem{HBrO}}
+\newcommand{\hoclc}     {\chem{[HOCl]}}
+\newcommand{\hocl}      {\chem{HOCl}}
+\newcommand{\hoic}      {\chem{[HOI]}}
+\newcommand{\hoi}       {\chem{HOI}}
+\newcommand{\hpc}       {\chem{[H^+]}}
+\newcommand{\hp}        {\chem{H^+}}
+
+\newcommand{\htooc}     {\chem{[H_20]}}
+\newcommand{\htoo}      {\chem{H_2O}}
+\newcommand{\htoog}     {\chem{H_2O(g)}}
+\newcommand{\htool}     {\chem{H_2O(l)}}
+\newcommand{\htoos}     {\chem{H_2O(s)}}
+\newcommand{\hcl}       {\chem{HCl}}
+\newcommand{\hclg}      {\chem{HCl(g)}}
+
+\newcommand{\hto}       {\chem{H_2}}
+\newcommand{\htog}      {\chem{H_2(g)}}
+\newcommand{\htol}      {\chem{H_2(l)}}
+\newcommand{\htos}      {\chem{H_2(s)}}
+
+\newcommand{\iodidc}    {\chem{[I^-]}}
+\newcommand{\iodid}     {\chem{I^-}}
+\newcommand{\ipt}       {\chem{IP_3}}
+\newcommand{\mal}       {\chem{CH_2(COOH)_2}}
+\newcommand{\ma}        {\chem{MA}}
+\newcommand{\ethan}     {\chem{C_2H_6}}
+\newcommand{\ethang}    {\chem{C_2H_6(g)}}
+\newcommand{\methan}    {\chem{CH_4}}
+\newcommand{\methang}   {\chem{CH_4(g)}}
+\newcommand{\mn}        {\chem{Mn}}
+\newcommand{\naphtalen} {\chem{C_{10}H_8}}
+\newcommand{\nhtre}     {\chem{NH_3}}
+\newcommand{\nhtreg}    {\chem{NH_3(g)}}
+\newcommand{\ntoog}     {\chem{N_2O(g)}}
+\newcommand{\nto}       {\chem{N_2}}
+\newcommand{\ntog}      {\chem{N_2}}
+\newcommand{\oclmc}     {\chem{[OCl^-]}}
+\newcommand{\oclm}      {\chem{OCl^-}}
+\newcommand{\ohmc}      {\chem{[OH^-]}}
+\newcommand{\ohm}       {\chem{OH^-}}
+\newcommand{\oimc}      {\chem{[OI^-]}}
+\newcommand{\oim}       {\chem{OI^-}}
+
+\newcommand{\oto}       {\chem{O_2}}
+\newcommand{\otog}      {\chem{O_2(g)}}
+\newcommand{\ozon}      {\chem{O_3}}
+\newcommand{\ozong}     {\chem{O_3(g)}}
+
+\newcommand{\phenol}    {\chem{C_6H_5OH}}
+\newcommand{\rut}       {\chem{Ru}}
+\newcommand{\sotog}     {\chem{SO_2(g)}}
+\newcommand{\sotol}     {\chem{SO_2(l)}}
+\newcommand{\sotos}     {\chem{SO_2(s)}}
+\newcommand{\soto}      {\chem{SO_2}}
+
+\newcommand{\sns}       {\chem{Sn(s)}}
+\newcommand{\snotos}    {\chem{SnO_2(s)}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\hpref}[2]{\hyperref[#2]{#1 \ref{#2}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Custom environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newfloat{grammar}{thp}{lop}
+\floatname{grammar}{Grammar}

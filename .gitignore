@@ -1,0 +1,6 @@
+## generic files to ignore
+*.aux
+*.dvi
+*.log
+*.pdf
+*.out
